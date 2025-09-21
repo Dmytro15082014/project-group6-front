@@ -5,12 +5,16 @@ type SelectProps = {
   options: string[];
   placeholder?: string;
   name?: string;
+  id?: string;
+  height?: number | string;
 };
 
 export default function CustomSelect({
   options,
   placeholder = "Select one...",
   name,
+  id,
+  height = 40,
 }: SelectProps) {
   const formattedOptions = options.map((opt) => ({
     value: opt,
@@ -24,18 +28,23 @@ export default function CustomSelect({
         placeholder={placeholder}
         classNamePrefix="custom-select"
         name={name}
+        id={id}
         styles={{
+          container: (base) => ({
+              ...base,
+              width: "100%", // ← контейнер займає всю ширину батьківського
+            }),
           control: (base, state) => ({
             ...base,
             backgroundColor: "#f2f2f2",
             borderRadius: state.menuIsOpen ? "12px 12px 0 0" : "12px",
-            border: "1px solid rgba(0,0,0,0.15)",
+            border: "1px solid rgba(0,0,0,0)",
             boxShadow: "none",
             padding: "2px 6px",
             cursor: "pointer",
-            minHeight: "44px",
-            width: "560px",
-            "&:hover": { border: "1px solid rgba(0,0,0,0.15)" },
+            height: height,
+            width: "100%",
+            "&:hover" : { border: "1px solid rgba(0,0,0,0.15)" },
           }),
           placeholder: (base) => ({
             ...base,
