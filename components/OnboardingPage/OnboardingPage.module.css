@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 64px;
-  padding: 56px;
+  padding: 20px;
 }
 
 .mainImage {
@@ -11,13 +10,12 @@
   object-fit: cover;
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 1124px) {
   .formContainer {
-    height: 100vh;
+    margin: 0 64px;
+    padding: 56px;
   }
-}
 
-@media only screen and (min-width: 1028px) {
   .onboardingLayout {
     display: grid;
     grid-template-columns: 1fr 1fr;
