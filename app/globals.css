@@ -1,5 +1,6 @@
 :root {
-  --background: #ffffff;
+  font-family: var(--font-geist-sans);
+  --second-family: "Comfortaa", sans-serif;
 }
 
 html,
@@ -9,7 +10,9 @@ body {
 }
 
 body {
+  width: 100%;
   background: var(--background);
+  font-family: var(--font-geist-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,5 +30,17 @@ a {
 
 main {
   display: flex;
-  flex-direction: row;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 70%;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    max-width: 100%;
+  }
 }

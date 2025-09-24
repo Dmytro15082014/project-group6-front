@@ -2,17 +2,23 @@
   position: relative;
   display: flex;
   width: 100%;
-  max-width: 576px;
   border-radius: 999px;
-  background: #fff4f6;
+  max-width: 335px;
+  background-color: #fff4f6;
   padding: 4px;
+  align-self: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
 }
 
 .toggleIndicator {
   position: absolute;
   top: 4px;
   bottom: 4px;
-  background: #ffc9d6; /* active tab background */
+  background: #ffc9d6;
   border-radius: 999px;
   transition: all 0.3s ease;
 }
@@ -37,4 +43,34 @@
 
 .toggleTab.active {
   color: #000;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .toggleTabs {
+    border-radius: 100px;
+    max-width: 704px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .toggleTabs {
+    max-width: 572px;
+    border-radius: 999px;
+    padding: 4px;
+  }
+
+  .toggleIndicator {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    border-radius: 999px;
+  }
+
+  .toggleTab {
+    padding: 10px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 999px;
+  }
 }
